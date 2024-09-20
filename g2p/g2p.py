@@ -86,9 +86,9 @@ class G2PTranscriber(object):
 
     def __init__(self, word, algorithm="silva"):
         # Initialize word
-        try:
+        if isinstance(word, bytes):
             self.word = word.decode("utf-8").lower()
-        except:
+        else:
             self.word = word.lower()
 
         # Initialize stress detector
