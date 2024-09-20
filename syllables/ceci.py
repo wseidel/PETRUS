@@ -26,9 +26,9 @@ from __future__ import unicode_literals
 
 class CECISyllableSeparator(object):
     def __init__(self, word):
-        try:
+        if isinstance(word, bytes):
             self.word = word.decode("utf-8").lower()
-        except (UnicodeDecodeError, UnicodeEncodeError):
+        else:
             self.word = word.lower()
 
     def _get(self, la, le):
