@@ -90,9 +90,9 @@ class Silva2011SyllableSeparator(object):
     """
 
     def __init__(self, word, stress):
-        try:
+        if isinstance(word, bytes):
             self.word = word.decode("utf-8").lower()
-        except:
+        else:
             self.word = word.lower()
         self.stress = stress
 

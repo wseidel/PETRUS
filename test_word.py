@@ -24,9 +24,9 @@ if __name__ == "__main__":
     parser.add_argument("-w", "--word", dest="word", required=True, help="Word")
     args = parser.parse_args()
     # Get the input word
-    try:
+    if isinstance(word, bytes):
         word = args.word.decode("utf-8").lower()
-    except:
+    else:
         word = args.word.lower()
     # Initialize G2P transcriber
     g2p = G2PTranscriber(word, algorithm=args.separator)
