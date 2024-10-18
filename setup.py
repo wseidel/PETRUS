@@ -5,6 +5,7 @@ setup(
     version="0.1",
     packages=find_packages(),
     install_requires=[],
+    include_package_data=True,
     author="Wesley Seidel Carvalho",
     author_email="wesley.seidel@gmail.com",
     description="""Pɛtɾʊs is a an online automatic phonetic transcription system for Brazilian Portuguese. 
